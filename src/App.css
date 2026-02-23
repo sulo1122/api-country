@@ -70,7 +70,12 @@
   margin-bottom: 40px;
 }
 #search-container {
-  border: 5px;
+  border: 2px solid #2b3945;
+  
+  
+}
+#region-container {
+  border: 2px solid #2b3945;
 }
 
 input, select {

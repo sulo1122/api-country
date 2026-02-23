@@ -8,7 +8,7 @@ export default function SearchFilter({ search, setSearch, region, setRegion }) {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <select value={region} onChange={(e) => setRegion(e.target.value)}>
+      <select id="region-container" value={region} onChange={(e) => setRegion(e.target.value)}>
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>
