@@ -119,7 +119,7 @@ body.dark .card {
   object-fit: cover;
 }
 #detail-image {
-  width: 600px;
+  width: 500px;
   height: 300px;
   object-fit: cover;
   align-items: center;
