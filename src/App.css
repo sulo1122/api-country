@@ -160,7 +160,7 @@ body.dark .card {
 }
 .para-bold 
 {
-  font-weight: bold !important;
+  font-weight: 600 !important;
 }
 
 .card:hover {
