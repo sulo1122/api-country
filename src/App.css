@@ -138,6 +138,10 @@ body.dark .card {
   font-size: 12px;
   font-weight: 500px;
 }
+.detail-info {
+  display: flex;
+  gap: 100px;
+}
 
 .card-body {
   padding: 3rem;

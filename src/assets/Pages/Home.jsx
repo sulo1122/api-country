@@ -11,7 +11,7 @@ export default function Home() {
   const countriesPerPage = 52
 
   useEffect(() => {
-    fetch('https://restcountries.com/v3.1/all?fields=name,flags,population,region,subregion,capital,borders,cca3')
+    fetch('https://restcountries.com/v3.1/all?fields=name,flags,population,region,subregion,capital,borders,language,currencies,topLevelDomain')
       .then(res => res.json())
       .then(data => setCountries(data))
   }, [])
