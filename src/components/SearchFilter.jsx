@@ -22,15 +22,20 @@ export default function SearchFilter({ search, setSearch, region, setRegion }) {
       onChange={(e) => setSearch(e.target.value)}
     />
   </div>
+  
 
       <select id="region-container" value={region} onChange={(e) => setRegion(e.target.value)}>
-        <option className="option-container"  value="">Filter by Region</option>
-        <option className="option-container" value="Africa">Africa</option>
-        <option className="option-container" value="Americas">America</option>
-        <option className="option-container" value="Asia">Asia</option>
-        <option className="option-container" value="Europe">Europe</option>
-        <option className="option-container" value="Oceania">Oceania</option>
+        
+        <option  value="">Filter by Region</option>
+        <option  value="Africa">Africa</option>
+        <option  value="Americas">America</option>
+        <option  value="Asia">Asia</option>
+        <option  value="Europe">Europe</option>
+        <option  value="Oceania">Oceania</option>
+      
       </select>
-    </div>
+      </div>
+      
+
   )
 }

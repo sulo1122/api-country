@@ -52,6 +52,8 @@ body.dark .header {
   font-size: 14px;
   transition: color 0.3s ease;
   transform: 0.3s ease;
+  column-gap: 10px;
+  justify-content: center;
 
 }
 .dark-btn .icon {
@@ -124,7 +126,7 @@ body.dark .search-icon {
   color: #ffffff; 
 }
 
-#region-container {
+ #region-container {
   background-color: hsl(0,0%,99%);
   color: hsl(200,15%,8%);
   width: 160px;
@@ -132,6 +134,10 @@ body.dark .search-icon {
   padding: 12px 16px;
   
   
+} 
+.dropdown-container {
+  border-radius: 10px;
+  border: none;
 }
 
 

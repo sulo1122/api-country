@@ -1,5 +1,5 @@
 
-
+  
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -8,14 +8,24 @@ export default function Detail() {
   const { name } = useParams();
   const navigate = useNavigate();
   const [country, setCountry] = useState(null);
+  const [borderCountries, setBorderCountries] = useState([]);
 
   useEffect(() => {
     setCountry(null);
+    setBorderCountries([]);
 
     fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
       .then(res => res.json())
-      .then(data => setCountry(data[0]))
-      .catch(() => console.log("Error fetching country"));
+      .then(data => {
+        setCountry(data[0]);
+
+      
+        if (data[0].borders) {
+          fetch(`https://restcountries.com/v3.1/alpha?codes=${data[0].borders.join(",")}`)
+            .then(res => res.json())
+            .then(borderData => setBorderCountries(borderData));
+        }
+      });
 
   }, [name]);
 
@@ -58,20 +68,14 @@ export default function Detail() {
             <div className="border-countries">
               <b>Border Countries:</b>
 
-              {country.borders && country.borders.length > 0 ? (
-                country.borders.map((borderCode) => (
+              {borderCountries.length > 0 ? (
+                borderCountries.map((border) => (
                   <button
-                    key={borderCode}
+                    key={border.cca3}
                     className="border-btn"
-                    onClick={() => {
-                      fetch(`https://restcountries.com/v3.1/alpha/${borderCode}`)
-                        .then(res => res.json())
-                        .then(data => {
-                          navigate(`/country/${data[0].name.common}`);
-                        });
-                    }}
+                    onClick={() => navigate(`/country/${border.name.common}`)}
                   >
-                    {borderCode}
+                    {border.name.common}
                   </button>
                 ))
               ) : (
